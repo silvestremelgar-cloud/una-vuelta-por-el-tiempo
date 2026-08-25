@@ -1,0 +1,665 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+  --color-night: #171a35;
+  --color-paper: #fff4dc;
+  --color-coral: #e97878;
+  --color-yellow: #f6d878;
+  --color-sage: #91a889;
+  --color-charcoal: #252536;
+  --color-white: #fffdf8;
+
+  --font-body: "DM Sans", sans-serif;
+  --font-display: "Playfair Display", serif;
+  --font-handwritten: "Caveat", cursive;
+
+  --transition-fast: 250ms ease;
+  --transition-medium: 600ms ease;
+  --transition-slow: 1000ms ease;
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: var(--font-body);
+  background: var(--color-night);
+  color: var(--color-white);
+
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--color-yellow);
+  outline-offset: 4px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.experiencia {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* =========================================================
+   ESCENAS GENERALES
+========================================================= */
+
+.scene {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   ESCENA 01 — EL MENSAJE
+========================================================= */
+
+.scene-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100svh;
+  padding: 80px 20px 90px;
+
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(75, 79, 145, 0.18),
+      transparent 38%
+    ),
+    var(--color-night);
+}
+
+.message-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(100%, 760px);
+
+  text-align: center;
+}
+
+.message-eyebrow {
+  margin-bottom: 22px;
+
+  font-family: var(--font-handwritten);
+  font-size: clamp(1.35rem, 6vw, 1.8rem);
+
+  color: var(--color-yellow);
+}
+
+.message-content h1 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-weight: 400;
+
+  font-size: clamp(2.25rem, 10vw, 5.2rem);
+
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+
+  color: var(--color-white);
+}
+
+.message-description {
+  width: min(100%, 500px);
+
+  margin: 26px auto 0;
+
+  font-size: clamp(0.9rem, 3.8vw, 1.1rem);
+
+  line-height: 1.7;
+
+  color: rgba(255, 253, 248, 0.72);
+}
+
+/* =========================================================
+   BOTÓN
+========================================================= */
+
+.time-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  min-height: 48px;
+
+  margin-top: 34px;
+  padding: 13px 20px;
+
+  border: 1px solid rgba(246, 216, 120, 0.4);
+  border-radius: 8px;
+
+  background: rgba(255, 244, 220, 0.06);
+
+  color: var(--color-paper);
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.time-button:hover {
+  background: rgba(246, 216, 120, 0.1);
+
+  border-color: rgba(246, 216, 120, 0.75);
+
+  box-shadow:
+    0 0 25px rgba(246, 216, 120, 0.08);
+}
+
+.time-button:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.time-button-icon {
+  font-size: 1.1rem;
+}
+
+.message-footer {
+  position: absolute;
+
+  left: 50%;
+  bottom: max(18px, env(safe-area-inset-bottom));
+
+  transform: translateX(-50%);
+
+  width: calc(100% - 40px);
+
+  font-family: var(--font-handwritten);
+  font-size: clamp(0.95rem, 4vw, 1.15rem);
+
+  color: rgba(255, 253, 248, 0.45);
+
+  text-align: center;
+}
+
+/* =========================================================
+   ESTRELLAS ESCENA 01
+========================================================= */
+
+.scene-stars {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+
+  color: var(--color-yellow);
+  opacity: 0.5;
+
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+.star-1 {
+  top: 15%;
+  left: 10%;
+
+  font-size: 1rem;
+}
+
+.star-2 {
+  top: 25%;
+  right: 10%;
+
+  font-size: 1.3rem;
+
+  animation-delay: 1s;
+}
+
+.star-3 {
+  bottom: 22%;
+  left: 13%;
+
+  font-size: 1.1rem;
+
+  animation-delay: 2s;
+}
+
+.star-4 {
+  bottom: 17%;
+  right: 12%;
+
+  font-size: 1.5rem;
+
+  animation-delay: 0.5s;
+}
+
+.star-5 {
+  top: 13%;
+  right: 22%;
+
+  font-size: 0.9rem;
+
+  animation-delay: 2.5s;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.15);
+  }
+}
+
+/* =========================================================
+   ESCENA 02 — MÁQUINA DEL TIEMPO
+========================================================= */
+
+.scene-time-machine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100svh;
+
+  padding: 80px 20px 90px;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(92, 95, 170, 0.18),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(246, 216, 120, 0.04),
+      transparent 55%
+    ),
+    var(--color-night);
+}
+
+.time-space {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.time-star {
+  position: absolute;
+
+  color: var(--color-yellow);
+
+  opacity: 0.4;
+
+  animation: timeFloat 5s ease-in-out infinite;
+}
+
+.time-star-1 {
+  top: 10%;
+  left: 10%;
+}
+
+.time-star-2 {
+  top: 20%;
+  right: 10%;
+
+  font-size: 1.5rem;
+
+  animation-delay: 1s;
+}
+
+.time-star-3 {
+  bottom: 20%;
+  left: 15%;
+
+  font-size: 1.2rem;
+
+  animation-delay: 2s;
+}
+
+.time-star-4 {
+  bottom: 12%;
+  right: 18%;
+
+  font-size: 1.6rem;
+
+  animation-delay: 0.8s;
+}
+
+.time-star-5 {
+  top: 50%;
+  left: 7%;
+
+  animation-delay: 1.5s;
+}
+
+.time-star-6 {
+  top: 65%;
+  right: 7%;
+
+  font-size: 1.3rem;
+
+  animation-delay: 2.5s;
+}
+
+@keyframes timeFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.25;
+  }
+
+  50% {
+    transform: translateY(-10px);
+    opacity: 0.7;
+  }
+}
+
+/* =========================================================
+   MÁQUINA
+========================================================= */
+
+.time-machine {
+  position: absolute;
+
+  width: min(88vw, 420px);
+  aspect-ratio: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+.time-ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+}
+
+.time-ring-outer {
+  width: 100%;
+  height: 100%;
+
+  border: 1px solid rgba(246, 216, 120, 0.2);
+
+  box-shadow:
+    0 0 60px rgba(100, 105, 200, 0.08),
+    inset 0 0 50px rgba(246, 216, 120, 0.03);
+
+  animation: rotateClockwise 18s linear infinite;
+}
+
+.time-ring-middle {
+  width: 76%;
+  height: 76%;
+
+  border: 1px dashed rgba(255, 244, 220, 0.22);
+
+  animation: rotateCounterClockwise 12s linear infinite;
+}
+
+.time-core {
+  width: 48%;
+  aspect-ratio: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(246, 216, 120, 0.5);
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(246, 216, 120, 0.14),
+      rgba(23, 26, 53, 0.9)
+    );
+
+  box-shadow:
+    0 0 50px rgba(246, 216, 120, 0.08);
+
+  font-size: clamp(2rem, 12vw, 3.5rem);
+
+  animation: pulseCore 3s ease-in-out infinite;
+}
+
+@keyframes rotateClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateCounterClockwise {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulseCore {
+  0%,
+  100% {
+    transform: scale(0.96);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+/* =========================================================
+   CONTENIDO MÁQUINA
+========================================================= */
+
+.time-content {
+  position: relative;
+  z-index: 3;
+
+  width: min(100%, 600px);
+
+  text-align: center;
+}
+
+.time-label {
+  margin-bottom: 16px;
+
+  font-size: clamp(0.65rem, 2.5vw, 0.75rem);
+  font-weight: 600;
+
+  letter-spacing: 0.22em;
+
+  color: var(--color-yellow);
+}
+
+.year-display {
+  font-family: var(--font-display);
+
+  font-size: clamp(5rem, 25vw, 11rem);
+
+  line-height: 0.9;
+
+  color: var(--color-white);
+
+  text-shadow:
+    0 0 40px rgba(246, 216, 120, 0.08);
+}
+
+.time-description {
+  width: min(100%, 420px);
+
+  margin: 24px auto 0;
+
+  font-size: clamp(0.85rem, 3.5vw, 0.95rem);
+
+  line-height: 1.7;
+
+  color: rgba(255, 253, 248, 0.65);
+}
+
+.time-button-secondary {
+  margin-top: 30px;
+}
+
+.time-footer {
+  position: absolute;
+
+  bottom: max(18px, env(safe-area-inset-bottom));
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 0.68rem;
+
+  letter-spacing: 0.15em;
+
+  color: rgba(255, 253, 248, 0.4);
+}
+
+/* =========================================================
+   TABLET / ESCRITORIO
+========================================================= */
+
+@media (min-width: 601px) {
+  .scene-message {
+    padding: 60px 30px;
+  }
+
+  .message-eyebrow {
+    margin-bottom: 24px;
+  }
+
+  .message-description {
+    margin-top: 32px;
+  }
+
+  .time-button {
+    margin-top: 44px;
+    padding: 15px 24px;
+  }
+
+  .scene-time-machine {
+    padding: 60px 30px;
+  }
+
+  .time-machine {
+    width: min(62vw, 420px);
+  }
+
+  .time-description {
+    margin-top: 28px;
+  }
+
+  .time-button-secondary {
+    margin-top: 36px;
+  }
+}
+
+/* =========================================================
+   PANTALLAS PEQUEÑAS
+========================================================= */
+
+@media (max-width: 380px) {
+  .scene-message {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .message-content h1 {
+    font-size: 2.15rem;
+  }
+
+  .message-description {
+    font-size: 0.86rem;
+  }
+
+  .time-button {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .year-display {
+    font-size: 4.7rem;
+  }
+
+  .time-description {
+    font-size: 0.84rem;
+  }
+}
+
+/* =========================================================
+   REDUCIR MOVIMIENTO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

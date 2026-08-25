@@ -1,0 +1,716 @@
+.escena05 {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(255, 211, 155, 0.35),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(182, 210, 255, 0.25),
+      transparent 30%
+    ),
+    #f7f1e7;
+
+  color: #2d2a26;
+}
+
+/* =========================================
+   ESTRELLAS
+========================================= */
+
+.escena05__stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.escena05__stars span {
+  position: absolute;
+  font-size: 1.2rem;
+  opacity: 0.35;
+  animation: escena05Float 6s ease-in-out infinite;
+}
+
+.escena05__stars span:nth-child(1) {
+  top: 8%;
+  left: 12%;
+}
+
+.escena05__stars span:nth-child(2) {
+  top: 18%;
+  right: 15%;
+  animation-delay: 1s;
+}
+
+.escena05__stars span:nth-child(3) {
+  top: 42%;
+  left: 8%;
+  animation-delay: 2s;
+}
+
+.escena05__stars span:nth-child(4) {
+  top: 55%;
+  right: 10%;
+  animation-delay: 0.5s;
+}
+
+.escena05__stars span:nth-child(5) {
+  top: 72%;
+  left: 17%;
+  animation-delay: 1.5s;
+}
+
+.escena05__stars span:nth-child(6) {
+  top: 86%;
+  right: 20%;
+  animation-delay: 2.5s;
+}
+
+@keyframes escena05Float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* =========================================
+   INTRO
+========================================= */
+
+.escena05__intro {
+  position: relative;
+  z-index: 1;
+
+  min-height: 100svh;
+  padding: 7rem 1.5rem 5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.escena05__chapter {
+  margin-bottom: 1.5rem;
+
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  font-weight: 700;
+
+  color: #9a7657;
+}
+
+.escena05__intro h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 12vw, 6rem);
+  line-height: 0.95;
+  font-weight: 500;
+}
+
+.escena05__intro h1 em {
+  color: #b56b58;
+  font-style: italic;
+}
+
+.escena05__intro-text {
+  max-width: 520px;
+  margin: 2rem auto 0;
+
+  font-size: 1rem;
+  line-height: 1.8;
+
+  color: #6d655d;
+}
+
+.escena05__scroll {
+  margin-top: 4rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  color: #9a7657;
+}
+
+.escena05__scroll-line {
+  width: 1px;
+  height: 45px;
+
+  background: #9a7657;
+
+  animation: escena05Scroll 1.8s ease-in-out infinite;
+}
+
+@keyframes escena05Scroll {
+  0% {
+    transform: scaleY(0.3);
+    transform-origin: top;
+  }
+
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+
+  100% {
+    transform: scaleY(0.3);
+    transform-origin: bottom;
+  }
+}
+
+/* =========================================
+   STORY
+========================================= */
+
+.escena05__story {
+  position: relative;
+  z-index: 1;
+
+  padding: 5rem 1.5rem 7rem;
+
+  display: flex;
+  justify-content: center;
+}
+
+.escena05__story-card {
+  width: min(100%, 650px);
+
+  padding: 3rem 2rem;
+
+  background: rgba(255, 252, 246, 0.88);
+
+  border: 1px solid rgba(154, 118, 87, 0.18);
+
+  box-shadow:
+    0 20px 50px rgba(70, 50, 30, 0.08);
+
+  transform: rotate(-1deg);
+}
+
+.escena05__small-title {
+  display: block;
+
+  margin-bottom: 1rem;
+
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+
+  color: #b56b58;
+}
+
+.escena05__story-card h2 {
+  margin: 0 0 1.5rem;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 8vw, 4rem);
+  line-height: 1;
+
+  font-weight: 500;
+}
+
+.escena05__story-card p {
+  margin: 0;
+
+  font-size: 1rem;
+  line-height: 1.8;
+
+  color: #6d655d;
+}
+
+/* =========================================
+   POLERA
+========================================= */
+
+.escena05__shirt-section {
+  position: relative;
+  z-index: 1;
+
+  padding: 5rem 1.5rem 8rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+.escena05__shirt {
+  width: min(90vw, 320px);
+  /* Aumentamos la altura mínima para acomodar la proporción vertical 335x597 */
+  min-height: 480px;
+
+  padding: 2.5rem 1.5rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffaf1,
+      #f0e5d5
+    );
+
+  border: 1px solid rgba(120, 90, 60, 0.15);
+
+  box-shadow:
+    0 30px 60px rgba(70, 50, 30, 0.12);
+
+  transform: rotate(-3deg);
+
+  position: relative;
+}
+
+.escena05__shirt::before {
+  content: "";
+
+  position: absolute;
+  top: -10px;
+  left: 50%;
+
+  width: 90px;
+  height: 22px;
+
+  transform: translateX(-50%) rotate(-3deg);
+
+  background: rgba(214, 177, 130, 0.55);
+}
+
+/* 🖼️ Contenedor adaptado para la proporción vertical 335x597 */
+.escena05__shirt-image-container {
+  width: 100%;
+  height: 320px; /* Altura generosa para que luzca la verticalidad */
+  margin-bottom: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.02); /* Fondo sutil por si quedan espacios laterales */
+
+  img {
+    width: 100%;
+    height: 100%;
+    /* 'contain' asegura que se vea TODA la imagen completa sin recortar ningún borde */
+    object-fit: contain; 
+    display: block;
+    border-radius: 6px;
+  }
+}
+
+.escena05__shirt span {
+  margin-bottom: 0.4rem;
+
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+
+  color: #9a7657;
+}
+
+.escena05__shirt strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.escena05__shirt small {
+  margin-top: 0.3rem;
+
+  color: #777066;
+  font-size: 0.85rem;
+}
+
+.escena05__shirt-text {
+  width: min(100%, 520px);
+}
+
+.escena05__shirt-text h2 {
+  margin: 0 0 1.5rem;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 9vw, 4.5rem);
+  line-height: 0.95;
+  font-weight: 500;
+}
+
+.escena05__shirt-text p {
+  margin: 0 0 1rem;
+
+  font-size: 1rem;
+  line-height: 1.8;
+
+  color: #6d655d;
+}
+
+.escena05__highlight {
+  color: #b56b58 !important;
+  font-weight: 700;
+}
+
+/* =========================================
+   LESSON
+========================================= */
+
+.escena05__lesson {
+  position: relative;
+  z-index: 1;
+
+  padding: 6rem 1.5rem 8rem;
+
+  background: #292724;
+
+  color: #f8f1e8;
+
+  text-align: center;
+}
+
+.escena05__quote {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.escena05__quote-icon {
+  margin-bottom: 2rem;
+
+  color: #d69b78;
+}
+
+.escena05__quote blockquote {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.7rem, 6vw, 3rem);
+  line-height: 1.25;
+
+  font-style: italic;
+  font-weight: 400;
+}
+
+.escena05__quote span {
+  display: block;
+
+  margin-top: 2rem;
+
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+
+  color: #bdb4aa;
+}
+
+.escena05__lesson-text {
+  max-width: 600px;
+  margin: 6rem auto 0;
+}
+
+.escena05__lesson-text p {
+  margin: 0.6rem 0;
+
+  font-size: 1.1rem;
+
+  color: #d8d0c8;
+}
+
+.escena05__lesson-text strong {
+  display: block;
+
+  margin-top: 2rem;
+
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  color: #d69b78;
+}
+
+.escena05__lesson-text h2 {
+  margin: 1rem 0 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 8vw, 4rem);
+  line-height: 1;
+
+  font-weight: 500;
+}
+
+/* =========================================
+   ENDING
+========================================= */
+
+.escena05__ending {
+  position: relative;
+  z-index: 1;
+
+  padding: 8rem 1.5rem 4rem;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 210, 170, 0.35),
+      transparent 40%
+    ),
+    #f7f1e7;
+
+  text-align: center;
+}
+
+.escena05__ending-card {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.escena05__ending-card h2 {
+  margin: 0 0 1.5rem;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 11vw, 5rem);
+  font-weight: 500;
+}
+
+.escena05__ending-card p {
+  max-width: 550px;
+  margin: 0 auto 1.5rem;
+
+  line-height: 1.8;
+
+  color: #6d655d;
+}
+
+.escena05__final-message {
+  margin-top: 3rem !important;
+
+  font-weight: 600;
+
+  color: #9a7657 !important;
+}
+
+.escena05__heart {
+  margin: 2rem auto 1rem;
+
+  color: #b56b58;
+}
+
+.escena05__brothers {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 1.7rem;
+
+  color: #2d2a26 !important;
+}
+
+/* =========================================
+   SNOOPY
+========================================= */
+
+.escena05__snoopy {
+  max-width: 500px;
+
+  margin: 4rem auto 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.escena05__snoopy-bubble {
+  padding: 1rem 1.2rem;
+
+  background: white;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 30px rgba(70, 50, 30, 0.08);
+
+  font-size: 0.85rem;
+  line-height: 1.5;
+
+  text-align: left;
+
+  position: relative;
+}
+
+.escena05__snoopy-bubble::after {
+  content: "";
+
+  position: absolute;
+
+  right: -8px;
+  bottom: 15px;
+
+  width: 16px;
+  height: 16px;
+
+  background: white;
+
+  transform: rotate(45deg);
+}
+
+.escena05__snoopy-placeholder {
+  width: 65px;
+  height: 65px;
+
+  display: grid;
+  place-items: center;
+
+  background: #fff;
+
+  border-radius: 50%;
+
+  font-size: 2rem;
+
+  box-shadow:
+    0 10px 25px rgba(70, 50, 30, 0.1);
+}
+
+/* =========================================
+   NAVEGACIÓN
+========================================= */
+
+.escena05__navigation {
+  position: relative;
+  z-index: 2;
+
+  padding: 2rem 1.5rem 5rem;
+
+  background: #f7f1e7;
+
+  display: flex;
+  justify-content: center;
+}
+
+.escena05__next {
+  border: none;
+
+  padding: 1rem 1.5rem;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  border-radius: 999px;
+
+  background: #2d2a26;
+  color: #fff;
+
+  font: inherit;
+  font-size: 0.9rem;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 15px 35px rgba(45, 42, 38, 0.2);
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.escena05__next:hover {
+  background: #b56b58;
+
+  box-shadow:
+    0 18px 40px rgba(181, 107, 88, 0.25);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (min-width: 700px) {
+
+  .escena05__intro {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .escena05__story-card {
+    padding: 4rem;
+  }
+
+  .escena05__shirt-section {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .escena05__shirt-text {
+    max-width: 500px;
+  }
+
+  .escena05__snoopy-placeholder {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (min-width: 1000px) {
+
+  .escena05__intro {
+    min-height: 100vh;
+  }
+
+  .escena05__story {
+    padding-top: 8rem;
+    padding-bottom: 10rem;
+  }
+
+  .escena05__shirt-section {
+    min-height: 80vh;
+  }
+
+  .escena05__lesson {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  .escena05__ending {
+    padding-top: 10rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .escena05__stars span,
+  .escena05__scroll-line {
+    animation: none;
+  }
+}

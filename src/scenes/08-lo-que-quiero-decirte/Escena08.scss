@@ -1,0 +1,479 @@
+.escena08 {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 15%,
+      rgba(255, 191, 209, 0.13),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 10% 80%,
+      rgba(255, 212, 148, 0.09),
+      transparent 25%
+    ),
+    #211a22;
+
+  color: #fff8f2;
+
+  isolation: isolate;
+
+  &__background {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -1;
+  }
+
+  &__glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    &--one {
+      width: 300px;
+      height: 300px;
+
+      top: -120px;
+      right: -100px;
+
+      background: rgba(255, 159, 190, 0.1);
+    }
+
+    &--two {
+      width: 280px;
+      height: 280px;
+
+      bottom: -100px;
+      left: -100px;
+
+      background: rgba(255, 205, 134, 0.08);
+    }
+  }
+
+  &__spark {
+    position: absolute;
+
+    color: rgba(255, 220, 180, 0.6);
+
+    &--one {
+      top: 20%;
+      left: 10%;
+    }
+
+    &--two {
+      top: 35%;
+      right: 9%;
+    }
+  }
+
+  &__content {
+    width: min(850px, calc(100% - 32px));
+
+    margin: 0 auto;
+
+    padding: 70px 0 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    border: 1px solid rgba(255, 218, 185, 0.2);
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    color: rgba(255, 232, 213, 0.75);
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    backdrop-filter: blur(10px);
+  }
+
+  &__intro {
+    margin: 35px 0 0;
+
+    color: rgba(255, 235, 219, 0.58);
+
+    font-size: 0.9rem;
+
+    letter-spacing: 0.04em;
+  }
+
+  &__title {
+    margin: 10px 0 0;
+
+    text-align: center;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(2rem, 6vw, 3.7rem);
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    line-height: 1.2;
+
+    color: #ffe8d8;
+  }
+
+  /* ================================
+     CARTA
+  ================================= */
+
+  &__letter {
+    width: min(700px, 100%);
+
+    margin-top: 42px;
+
+    position: relative;
+
+    background:
+      linear-gradient(
+        rgba(255, 252, 242, 0.97),
+        rgba(249, 239, 218, 0.97)
+      );
+
+    color: #392d2c;
+
+    border-radius: 3px;
+
+    box-shadow:
+      0 25px 60px rgba(0, 0, 0, 0.28),
+      0 5px 15px rgba(0, 0, 0, 0.12);
+
+    transform-origin: top center;
+
+    overflow: hidden;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background-image:
+        linear-gradient(
+          rgba(120, 90, 70, 0.04) 1px,
+          transparent 1px
+        );
+
+      background-size: 100% 32px;
+
+      pointer-events: none;
+    }
+  }
+
+  &__letter-top {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 22px 28px;
+
+    border-bottom: 1px solid rgba(80, 55, 40, 0.12);
+
+    color: rgba(65, 48, 42, 0.55);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.15em;
+  }
+
+  &__heart {
+    color: #d9828e;
+  }
+
+  &__letter-body {
+    position: relative;
+
+    padding: 35px 42px 42px;
+
+    font-family:
+      Georgia,
+      "Times New Roman",
+      serif;
+
+    font-size: 1.02rem;
+
+    line-height: 1.9;
+
+    p {
+      margin: 0 0 22px;
+    }
+  }
+
+  &__greeting {
+    margin-bottom: 28px !important;
+
+    font-size: 1.18rem;
+
+    font-style: italic;
+
+    color: #59413b;
+  }
+
+  &__important {
+    margin-top: 28px !important;
+
+    margin-bottom: 28px !important;
+
+    text-align: center;
+
+    font-size: 1.55rem;
+
+    font-weight: 600;
+
+    color: #b25f72;
+
+    line-height: 1.4;
+  }
+
+  &__important--soft {
+    color: #866354;
+
+    font-size: 1.25rem;
+
+    font-style: italic;
+  }
+
+  &__signature {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    margin-top: 38px;
+
+    padding-top: 25px;
+
+    border-top: 1px dashed rgba(80, 55, 40, 0.2);
+
+    color: rgba(57, 45, 44, 0.65);
+
+    font-size: 0.95rem;
+
+    span {
+      font-style: italic;
+    }
+
+    strong {
+      color: #4c3733;
+
+      font-size: 1.05rem;
+    }
+  }
+
+  /* ================================
+     PARTE INFERIOR
+  ================================= */
+
+  &__after {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 38px;
+
+    p {
+      margin: 0;
+
+      color: rgba(255, 233, 215, 0.6);
+
+      font-size: 0.9rem;
+
+      font-style: italic;
+    }
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+    padding: 13px 22px;
+
+    border: 1px solid rgba(255, 217, 179, 0.28);
+
+    border-radius: 999px;
+
+    background: rgba(255, 220, 187, 0.06);
+
+    color: #ffeede;
+
+    font-family: inherit;
+
+    font-size: 0.88rem;
+
+    cursor: pointer;
+
+    transition:
+      background 0.25s ease,
+      border-color 0.25s ease,
+      transform 0.25s ease;
+
+    &:hover {
+      background: rgba(255, 220, 187, 0.12);
+
+      border-color: rgba(255, 217, 179, 0.5);
+
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+  .escena08 {
+    &__content {
+      padding-top: 55px;
+      padding-bottom: 80px;
+    }
+
+    &__letter-body {
+      padding: 30px 32px 36px;
+
+      font-size: 0.98rem;
+
+      line-height: 1.85;
+    }
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 520px) {
+  .escena08 {
+    &__content {
+      width: calc(100% - 22px);
+
+      padding-top: 45px;
+      padding-bottom: 70px;
+    }
+
+    &__label {
+      padding: 7px 11px;
+
+      font-size: 0.62rem;
+    }
+
+    &__intro {
+      margin-top: 27px;
+
+      font-size: 0.78rem;
+    }
+
+    &__title {
+      margin-top: 9px;
+
+      font-size: 2rem;
+
+      line-height: 1.25;
+    }
+
+    &__letter {
+      margin-top: 30px;
+    }
+
+    &__letter-top {
+      padding: 18px 19px;
+
+      font-size: 0.6rem;
+    }
+
+    &__letter-body {
+      padding: 27px 22px 30px;
+
+      font-size: 0.91rem;
+
+      line-height: 1.8;
+
+      p {
+        margin-bottom: 19px;
+      }
+    }
+
+    &__greeting {
+      font-size: 1rem;
+    }
+
+    &__important {
+      font-size: 1.3rem;
+    }
+
+    &__important--soft {
+      font-size: 1.08rem;
+    }
+
+    &__signature {
+      margin-top: 30px;
+
+      padding-top: 20px;
+
+      font-size: 0.85rem;
+
+      strong {
+        font-size: 0.95rem;
+      }
+    }
+
+    &__after {
+      margin-top: 30px;
+
+      p {
+        font-size: 0.8rem;
+      }
+    }
+
+    &__button {
+      padding: 12px 19px;
+
+      font-size: 0.82rem;
+    }
+
+    &__spark {
+      &--one {
+        top: 13%;
+        left: 5%;
+      }
+
+      &--two {
+        top: 29%;
+        right: 5%;
+      }
+    }
+  }
+}

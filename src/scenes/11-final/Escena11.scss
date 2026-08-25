@@ -1,0 +1,567 @@
+.escena-11 {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  width: 100%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 80px 24px 110px;
+
+  color: #fff9f3;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(242, 166, 194, 0.16),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(130, 183, 255, 0.1),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(255, 212, 137, 0.08),
+      transparent 25%
+    ),
+    linear-gradient(
+      145deg,
+      #171421 0%,
+      #211a2b 42%,
+      #161722 100%
+    );
+
+  isolation: isolate;
+}
+
+/* =========================================================
+   FONDO
+   ========================================================= */
+
+.escena-11__background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.escena-11__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.25;
+  animation: escena11Float 10s ease-in-out infinite;
+}
+
+.escena-11__glow--one {
+  width: 280px;
+  height: 280px;
+  top: 5%;
+  left: -100px;
+  background: rgba(236, 142, 180, 0.3);
+}
+
+.escena-11__glow--two {
+  width: 320px;
+  height: 320px;
+  right: -130px;
+  bottom: 5%;
+  background: rgba(115, 164, 230, 0.22);
+  animation-delay: -3s;
+}
+
+.escena-11__glow--three {
+  width: 220px;
+  height: 220px;
+  top: 50%;
+  right: 20%;
+  background: rgba(255, 211, 140, 0.12);
+  animation-delay: -6s;
+}
+
+.escena-11__stars {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-around;
+
+  padding: 5vh 5vw;
+
+  color: rgba(255, 255, 255, 0.28);
+  font-size: 14px;
+}
+
+.escena-11__stars span {
+  animation: escena11Twinkle 3s ease-in-out infinite;
+}
+
+.escena-11__stars span:nth-child(2n) {
+  animation-delay: -1s;
+}
+
+.escena-11__stars span:nth-child(3n) {
+  animation-delay: -2s;
+}
+
+/* =========================================================
+   CONTENIDO
+   ========================================================= */
+
+.escena-11__content {
+  width: min(760px, 100%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.escena-11__eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-bottom: 28px;
+
+  color: rgba(255, 231, 213, 0.72);
+
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   SÍMBOLO
+   ========================================================= */
+
+.escena-11__symbol {
+  position: relative;
+
+  width: 100px;
+  height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 28px;
+}
+
+.escena-11__symbol-ring {
+  width: 76px;
+  height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 219, 227, 0.45);
+  border-radius: 50%;
+
+  color: #f7b7ca;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  box-shadow:
+    0 0 30px rgba(239, 158, 188, 0.14),
+    inset 0 0 25px rgba(255, 255, 255, 0.025);
+
+  backdrop-filter: blur(8px);
+}
+
+.escena-11__heart {
+  animation: escena11Heartbeat 2.8s ease-in-out infinite;
+}
+
+.escena-11__orbit {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  color: rgba(255, 226, 202, 0.7);
+}
+
+.escena-11__orbit--two {
+  align-items: flex-end;
+  color: rgba(172, 207, 255, 0.55);
+}
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.escena-11__title {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(2.7rem, 10vw, 5.8rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+
+  color: #fff8f3;
+}
+
+.escena-11__title span {
+  display: block;
+
+  margin-top: 10px;
+
+  font-style: italic;
+
+  color: #f3b4c8;
+
+  text-shadow:
+    0 0 25px rgba(243, 180, 200, 0.15);
+}
+
+/* =========================================================
+   DIVISOR
+   ========================================================= */
+
+.escena-11__divider {
+  width: min(300px, 75%);
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin: 30px 0 28px;
+
+  color: #efb4c7;
+}
+
+.escena-11__divider span {
+  flex: 1;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(239, 180, 199, 0.45)
+  );
+}
+
+.escena-11__divider span:last-of-type {
+  background: linear-gradient(
+    90deg,
+    rgba(239, 180, 199, 0.45),
+    transparent
+  );
+}
+
+/* =========================================================
+   MENSAJE PRINCIPAL
+   ========================================================= */
+
+.escena-11__message {
+  max-width: 650px;
+}
+
+.escena-11__message p {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(1.25rem, 4vw, 1.85rem);
+  line-height: 1.65;
+
+  color: rgba(255, 248, 243, 0.92);
+}
+
+/* =========================================================
+   MENSAJE PERSONAL
+   ========================================================= */
+
+.escena-11__personal {
+  margin-top: 34px;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.escena-11__personal p {
+  margin: 0;
+}
+
+.escena-11__personal-highlight {
+  margin-top: 18px !important;
+
+  color: #f4b6ca;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+/* =========================================================
+   FIRMA
+   ========================================================= */
+
+.escena-11__signature {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  margin-top: 34px;
+
+  color: rgba(255, 255, 255, 0.48);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.escena-11__signature strong {
+  color: rgba(255, 237, 226, 0.88);
+
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* =========================================================
+   BOTÓN REINICIO
+   ========================================================= */
+
+.escena-11__restart {
+  position: absolute;
+  left: 50%;
+  bottom: 64px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 11px 17px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+
+  color: rgba(255, 255, 255, 0.66);
+
+  background: rgba(255, 255, 255, 0.045);
+
+  font-family: inherit;
+  font-size: 0.75rem;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.escena-11__restart:hover {
+  color: #fff;
+
+  background: rgba(255, 255, 255, 0.09);
+
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.escena-11__footer {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: rgba(255, 255, 255, 0.25);
+
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   ANIMACIONES
+   ========================================================= */
+
+@keyframes escena11Heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  12% {
+    transform: scale(1.08);
+  }
+
+  24% {
+    transform: scale(1);
+  }
+
+  36% {
+    transform: scale(1.06);
+  }
+
+  48% {
+    transform: scale(1);
+  }
+}
+
+@keyframes escena11Twinkle {
+  0%,
+  100% {
+    opacity: 0.18;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 0.65;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes escena11Float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -20px, 0);
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 600px) {
+  .escena-11 {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .escena-11__personal {
+    font-size: 1.05rem;
+  }
+
+  .escena-11__restart {
+    bottom: 66px;
+  }
+}
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 900px) {
+  .escena-11 {
+    padding-top: 60px;
+    padding-bottom: 120px;
+  }
+
+  .escena-11__symbol {
+    margin-bottom: 34px;
+  }
+
+  .escena-11__message {
+    margin-top: 4px;
+  }
+
+  .escena-11__personal {
+    margin-top: 38px;
+  }
+
+  .escena-11__glow--one {
+    width: 400px;
+    height: 400px;
+  }
+
+  .escena-11__glow--two {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+/* =========================================================
+   PANTALLAS PEQUEÑAS
+   ========================================================= */
+
+@media (max-height: 700px) {
+  .escena-11 {
+    padding-top: 45px;
+    padding-bottom: 95px;
+  }
+
+  .escena-11__eyebrow {
+    margin-bottom: 14px;
+  }
+
+  .escena-11__symbol {
+    width: 75px;
+    height: 75px;
+    margin-bottom: 16px;
+  }
+
+  .escena-11__symbol-ring {
+    width: 58px;
+    height: 58px;
+  }
+
+  .escena-11__title {
+    font-size: clamp(2.3rem, 9vw, 4rem);
+  }
+
+  .escena-11__divider {
+    margin: 18px 0;
+  }
+
+  .escena-11__personal {
+    margin-top: 20px;
+  }
+
+  .escena-11__signature {
+    margin-top: 20px;
+  }
+
+  .escena-11__restart {
+    bottom: 48px;
+  }
+
+  .escena-11__footer {
+    bottom: 12px;
+  }
+}
