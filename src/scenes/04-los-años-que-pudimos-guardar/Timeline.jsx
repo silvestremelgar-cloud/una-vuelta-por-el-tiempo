@@ -16,7 +16,7 @@ import imgHoy from "../../assets/Hoy.png";
 
 const momentos = [
   {
-    año: "Familia",
+    año: "Nuestro Abuelo",
     etiqueta: "Siempre unidos",
     titulo: "",
     texto:
