@@ -1,4 +1,9 @@
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 
 import Inicio from "./pages/Inicio";
 
@@ -18,7 +23,10 @@ import ScrollToTop from "./components/ScrollToTop";
 
 import "./styles/main.scss";
 
-// Wrapper para escena 01
+/* =========================================================
+   ESCENA 01
+========================================================= */
+
 function Escena01Wrapper() {
   const navigate = useNavigate();
 
@@ -29,7 +37,10 @@ function Escena01Wrapper() {
   );
 }
 
-// Wrapper para escena 02
+/* =========================================================
+   ESCENA 02
+========================================================= */
+
 function Escena02Wrapper() {
   const navigate = useNavigate();
 
@@ -40,73 +51,85 @@ function Escena02Wrapper() {
   );
 }
 
+/* =========================================================
+   APP
+========================================================= */
+
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/una-vuelta-por-el-tiempo">
 
-      {/* 
-        Cada vez que cambia la ruta, la nueva escena
-        comienza automáticamente desde arriba.
-      */}
       <ScrollToTop />
 
       <Routes>
 
+        {/* INICIO */}
         <Route
           path="/"
           element={<Inicio />}
         />
 
+        {/* ESCENA 01 */}
         <Route
           path="/escena-01"
           element={<Escena01Wrapper />}
         />
 
+        {/* ESCENA 02 */}
         <Route
           path="/escena-02"
           element={<Escena02Wrapper />}
         />
 
+        {/* ESCENA 03 */}
         <Route
           path="/escena-03"
           element={<Escena03 />}
         />
 
+        {/* ESCENA 04 */}
         <Route
           path="/escena-04"
           element={<Escena04 />}
         />
 
+        {/* ESCENA 05 */}
         <Route
           path="/escena-05"
           element={<Escena05 />}
         />
 
+        {/* ESCENA 06 */}
         <Route
           path="/escena-06"
           element={<Escena06 />}
         />
 
+        {/* ESCENA 07 */}
         <Route
           path="/escena-07"
           element={<Escena07 />}
         />
 
+        {/* ESCENA 08 */}
         <Route
           path="/escena-08"
           element={<Escena08 />}
         />
 
+        {/* ESCENA 09 */}
         <Route
           path="/escena-09"
           element={<Escena09 />}
         />
 
+        {/* ESCENA 10 */}
         <Route
           path="/escena-10"
           element={<Escena10 />}
         />
 
+        {/* ESCENA 11 */}
         <Route
           path="/escena-11"
           element={<Escena11 />}

@@ -8,7 +8,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import "./Timeline.scss";
 
-import imgFamilia from "../../assets/Familia.png";
+import imgFamilia from "../../assets/Abuelo.jpg";
 import imgInfancia from "../../assets/Infancia.png";
 import imgHermanos from "../../assets/Hermanos.png";
 import img15 from "../../assets/15.png";
@@ -18,9 +18,9 @@ const momentos = [
   {
     año: "Familia",
     etiqueta: "Siempre unidos",
-    titulo: "",
+    titulo: "Con su abuelo",
     texto:
-      "Un pequeño recuerdo que con el tiempo se convertiría en una historia llena de personas, lugares, aventuras y recuerdos.",
+      "Un recuerdo especial junto a su abuelo, que marcó el inicio de una historia compartida con cariño, aprendizajes y momentos que nunca se olvidan.",
     posicion: "izquierda",
     imagen: imgFamilia,
   },
@@ -75,10 +75,7 @@ function Timeline() {
 
   return (
     <main className="timeline">
-      <div
-        className="timeline__fondo"
-        aria-hidden="true"
-      />
+      <div className="timeline__fondo" aria-hidden="true" />
 
       <div
         className="timeline__decoracion timeline__decoracion--uno"
@@ -96,32 +93,18 @@ function Timeline() {
 
       <motion.div
         className="timeline__contenido"
-        initial={{
-          opacity: 0,
-        }}
-        animate={{
-          opacity: 1,
-        }}
-        transition={{
-          duration: 1,
-        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
       >
         <header className="timeline__encabezado">
           <motion.button
             type="button"
             className="timeline__volver"
             onClick={volver}
-            initial={{
-              opacity: 0,
-              x: -15,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-            }}
-            transition={{
-              duration: 0.5,
-            }}
+            initial={{ opacity: 0, x: -15 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
           >
             <ArrowLeft size={17} />
             Volver
@@ -129,54 +112,26 @@ function Timeline() {
 
           <motion.div
             className="timeline__icono"
-            initial={{
-              scale: 0,
-              rotate: -30,
-            }}
-            animate={{
-              scale: 1,
-              rotate: 0,
-            }}
-            transition={{
-              duration: 0.7,
-              type: "spring",
-              stiffness: 160,
-            }}
+            initial={{ scale: 0, rotate: -30 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ duration: 0.7, type: "spring", stiffness: 160 }}
           >
-            <Clock3
-              size={28}
-              strokeWidth={1.4}
-            />
+            <Clock3 size={28} strokeWidth={1.4} />
           </motion.div>
 
           <motion.span
             className="timeline__etiqueta"
-            initial={{
-              opacity: 0,
-            }}
-            animate={{
-              opacity: 1,
-            }}
-            transition={{
-              delay: 0.3,
-            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
           >
             LOS AÑOS QUE PUDIMOS GUARDAR
           </motion.span>
 
           <motion.h1
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              delay: 0.4,
-              duration: 0.7,
-            }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.7 }}
           >
             Algunos años,
             <br />
@@ -184,46 +139,24 @@ function Timeline() {
           </motion.h1>
 
           <motion.p
-            initial={{
-              opacity: 0,
-              y: 15,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              delay: 0.6,
-              duration: 0.7,
-            }}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.7 }}
           >
             No todos los momentos quedaron fotografiados.
             <br />
-            Pero los que sí pudimos guardar, merecen volver a
-            ser vistos.
+            Pero los que sí pudimos guardar, merecen volver a ser vistos.
           </motion.p>
         </header>
 
         <section className="timeline__lista">
-          <div
-            className="timeline__linea"
-            aria-hidden="true"
-          >
+          <div className="timeline__linea" aria-hidden="true">
             <motion.div
               className="timeline__linea-progreso"
-              initial={{
-                scaleY: 0,
-              }}
-              whileInView={{
-                scaleY: 1,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 1.8,
-                ease: "easeInOut",
-              }}
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.8, ease: "easeInOut" }}
             />
           </div>
 
@@ -231,22 +164,10 @@ function Timeline() {
             <motion.article
               key={`${momento.año}-${index}`}
               className={`timeline__momento timeline__momento--${momento.posicion}`}
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.2,
-              }}
-              transition={{
-                duration: 0.7,
-                delay: 0.05,
-              }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.05 }}
             >
               <div className="timeline__punto">
                 <span />
@@ -257,32 +178,18 @@ function Timeline() {
                   <div className="timeline__foto-contenido">
                     <img
                       src={momento.imagen}
-                      alt={
-                        momento.titulo ||
-                        momento.año
-                      }
+                      alt={momento.titulo || momento.año}
                     />
                   </div>
-
-                  <div
-                    className="timeline__foto-cinta"
-                    aria-hidden="true"
-                  />
+                  <div className="timeline__foto-cinta" aria-hidden="true" />
                 </div>
 
                 <div className="timeline__texto">
-                  <span className="timeline__año">
-                    {momento.año}
-                  </span>
-
+                  <span className="timeline__año">{momento.año}</span>
                   <span className="timeline__momento-etiqueta">
                     {momento.etiqueta}
                   </span>
-
-                  {momento.titulo && (
-                    <h2>{momento.titulo}</h2>
-                  )}
-
+                  {momento.titulo && <h2>{momento.titulo}</h2>}
                   <p>{momento.texto}</p>
                 </div>
               </div>
@@ -292,50 +199,24 @@ function Timeline() {
 
         <motion.section
           className="timeline__mensaje-final"
-          initial={{
-            opacity: 0,
-            y: 30,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.8,
-          }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
-          <Sparkles
-            size={22}
-            strokeWidth={1.2}
-          />
-
+          <Sparkles size={22} strokeWidth={1.2} />
           <p>
-            Y aunque los años sigen pasando,
-            <strong>
-              {" "}
-              algunas cosas nunca dejan de ser
-              importantes.
-            </strong>
+            Y aunque los años siguen pasando,
+            <strong> algunas cosas nunca dejan de ser importantes.</strong>
           </p>
         </motion.section>
 
         <motion.div
           className="timeline__continuar"
-          initial={{
-            opacity: 0,
-          }}
-          whileInView={{
-            opacity: 1,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.8,
-          }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
           <button
             type="button"
@@ -343,7 +224,6 @@ function Timeline() {
             onClick={continuar}
           >
             <span>Continuar el viaje</span>
-
             <ArrowRight size={19} />
           </button>
         </motion.div>
