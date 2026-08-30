@@ -8,7 +8,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import "./Timeline.scss";
 
-import imgFamilia from "../../assets/Familia.png";
+import imgFamilia from "../../assets/Abuelo.jpg";
 import imgInfancia from "../../assets/Infancia.png";
 import imgHermanos from "../../assets/Hermanos.png";
 import img15 from "../../assets/15.png";
